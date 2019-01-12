@@ -816,3 +816,103 @@ gpgcheck=0
 mv /etc/yum.repos.d/CentOS-* /opt
 yum install vim
 ```
+
+## Certbot申请https证书
+
+**场景:** 申请https证书
+
+[官方地址](https://certbot.eff.org/)
+
+使用前安装certbot, 安装方式官方地址有说明
+
+`certbot certonly --standalone -n --agree-tos --email you@gmail.com -d you.domain.com --server https://acme-v02.api.letsencrypt.org/directory`
+
+`certbot certonly --standalone -d *.rat.red --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+`
+
+会在`/etc/letsencrypt/live/you.domain.com/`生成对应的证书文件
+
+配置crontab 自动刷新
+
+`0 3 1 * * certbot renew --renew-hook "shell"`
+
+## linux下crontab配置shell脚本实现秒级别任务
+
+某些时候我们需要cronjob来跑一些秒级得任务，默认得crontab只能支持到分钟级别
+
+实现思路， 分钟级别得调用一个shell， shell中通过sleep控制时间操作
+
+`crontab -e`
+
+`*/1 * * * * command`
+
+command sh
+
+```sh
+# do 60 times action
+for i in {0..59}; do
+	action sh
+	sleep 1
+done
+```
+
+## tmux 终端复用
+
+tmux是一款优秀的终端复用软件，它比Screen更加强大。
+
+`sessions` `windows` `panes` 多次复用
+
+[推荐文档](http://louiszhai.github.io/2017/09/30/tmux/#%E4%BC%9A%E8%AF%9D)
+
+个人使用 `~/.tmux.conf`
+
+```sh
+set -g prefix C-x
+set -g default-terminal "screen-256color"
+set -g status-bg black
+set -g status-fg white
+set-option -g status-justify centre
+set-option -g status-left '#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]'
+set-option -g status-left-length 20
+setw -g automatic-rename on
+set-window-option -g window-status-format '#[dim]#I:#[default]#W#[fg=grey,dim]'
+set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]'
+set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
+set -g mouse on
+set -g renumber-windows on
+set -g base-index 1
+set -g pane-base-index 1
+setw -g allow-rename off
+setw -g automatic-rename off
+setw -g mode-keys vi
+```
+
+如果需要tmux快捷指令, 推荐如下
+
+```sh
+alias tx='tmux'
+alias txl='tmux ls'
+alias txa='tmux a'
+alias txcs='tmux new -s'
+alias txk='tmux kill-server'
+alias txks='tmux kill-session -t'
+```
+
+tmux 一些常用的指令推荐
+```sh
+# window篇
+操作profix + c #创建新的窗口 
+操作profix + & #关闭当前窗口 
+操作profix + num(window编号) #切换到指定窗口
+操作profix + p(window编号) #切换到上一窗口
+操作profix + n(window编号) #切换到下一窗口
+操作profix + w(window编号) #打开窗口列表
+
+# pane篇
+操作profix + “ #面板上下分
+操作profix + % #面板左右分 
+操作profix + x #关闭当前面板
+
+# 更多不常用的可以自行搜索
+# 例如 https://gist.github.com/MohamedAlaa/2961058
+```

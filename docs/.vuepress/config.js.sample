@@ -1,0 +1,51 @@
+module.exports = {
+  evergreen: true,
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: '充满传奇的笔记！',
+      description: ''
+    }
+  },
+  themeConfig: {
+    sidebarDepth: 2,
+    locales: {
+      '/': {
+        label: '简体中文',
+        selectText: '选择语言',
+        lastUpdated: '上次编辑时间',
+        sidebar: {
+          '/': [{
+            title: '随笔',
+            children: [
+              '/notes/Linux',
+              '/notes/PHP',
+              '/notes/Nginx',
+              '/notes/JavaScript',
+              '/notes/Document',
+              '/notes/GitHelp',
+              '/notes/NmapHelp',
+              '/notes/Docker'
+            ]
+          }]
+        }
+      }
+    }
+  },
+  plugins: [ 
+    [
+      'gitalk-maker',
+      {
+        gitalkConfig: {
+          clientID: '',
+          clientSecret: '',
+          repo: '',
+          owner: '',
+          admin: [''],
+          // id: location.pathname, // 无法配置默认用 location.pathname
+          distractionFreeMode: false, // Facebook-like distraction free mode
+        }
+      }
+    ] 
+  ]
+}

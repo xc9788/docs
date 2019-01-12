@@ -201,3 +201,33 @@ require 'vendor/autoload.php';
 ```
 
 现在我们就可以使用 monolog 了！想要学习更多关于 Composer 的知识，请查看“基本用法”章节。
+
+## 常用日期，时间函数
+
+#### date()
+
+date函数需要format参数指定如何格式化日期， 第二个参数可以指定时间戳来获取格式化时间。
+
+如: `date('Y-m-d H:i:s', time())` // 默认即为time()
+
+由于支持得format参数过多， 这么不做详细介绍, [详细](https://www.php.net/manual/en/function.date.php)
+
+#### strtotime()
+
+strtotime函数是将format格式化日期或者指定得英文文本日期时间描述解析为Unix时间戳
+
+这里写些指定英文文本日期时间描述操作
+
+`strtotime("+1 week 2 days 4 hours 2 seconds")` 当前时间 + 1周后2天4小时2秒
+
+`strtotime( "2009-01-31 +1 month" )` 2009年01月31号 + 下个月 （ps: 这里不是31或者30天 会自动为28天 及 2月28日
+
+`strtotime("first day of next month")` 下个月第一天
+
+[详细](https://www.php.net/manual/en/function.strtotime.php)
+
+## json_encode 和 json_decode
+
+`json_encode(arr || obj)` 将数组或者对象 转成json字符串 [详细](https://www.php.net/manual/en/function.json-encode.php)
+
+`json_decode((json)str)` 将json字符串转成数组或者对象(取决于第二个(bool)assoc参数) [详细](https://www.php.net/manual/en/function.json-decode.php)

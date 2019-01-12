@@ -1,9 +1,12 @@
 {
   "devDependencies": {
-    "vuepress": "^0.14.4"
+    "vuepress": "^1.5.2"
   },
-    "scripts": {
+  "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress-plugin-gitalk-maker": "^0.1.0"
   }
 }
