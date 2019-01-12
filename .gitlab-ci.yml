@@ -1,0 +1,7 @@
+deploy:
+  stage: deploy
+  tags: [ "docs" ]
+  only:
+    - master
+  script:
+    - "sudo ratRedUpdate"
