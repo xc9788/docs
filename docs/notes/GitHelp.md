@@ -95,6 +95,5 @@ git checkout <filename>
 git checkout .
 ```
 
-test autoBuild
-1
-2
+
+我要测试测试
