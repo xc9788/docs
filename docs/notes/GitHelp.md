@@ -95,4 +95,28 @@ git checkout <filename>
 git checkout .
 ```
 
+<<<<<<< HEAD
 这是陈大佬让我测试的
+=======
+
+test 
+
+
+test
+
+
+sfasfdasfasdfads
+ dafsdfsa
+321
+321
+321
+321
+321
+321
+321
+321
+321
+321
+321
+321
+>>>>>>> 8ec0fb1353767094419f345722f26df308387290
