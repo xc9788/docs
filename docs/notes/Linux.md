@@ -816,3 +816,19 @@ gpgcheck=0
 mv /etc/yum.repos.d/CentOS-* /opt
 yum install vim
 ```
+
+## Certbot申请https证书
+
+**场景:** 申请https证书
+
+[官方地址](https://certbot.eff.org/)
+
+使用前安装certbot, 安装方式官方地址有说明
+
+`certbot certonly --standalone -n --agree-tos --email you@gmail.com -d you.domain.com --server https://acme-v02.api.letsencrypt.org/directory`
+
+会在`/etc/letsencrypt/live/you.domain.com/`生成对应的证书文件
+
+配置crontab 自动刷新
+
+`0 3 1 * * certbot renew --renew-hook “shell”`
