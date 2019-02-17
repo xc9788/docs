@@ -827,6 +827,9 @@ yum install vim
 
 `certbot certonly --standalone -n --agree-tos --email you@gmail.com -d you.domain.com --server https://acme-v02.api.letsencrypt.org/directory`
 
+`certbot certonly --standalone -d *.rat.red --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+`
+
 会在`/etc/letsencrypt/live/you.domain.com/`生成对应的证书文件
 
 配置crontab 自动刷新
