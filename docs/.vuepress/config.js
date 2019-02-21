@@ -25,7 +25,8 @@ module.exports = {
                 '/notes/JavaScript',
                 '/notes/Document',
                 '/notes/GitHelp',
-                '/notes/NmapHelp'
+                '/notes/NmapHelp',
+                '/notes/Docker'
               ]
             }
           ]
