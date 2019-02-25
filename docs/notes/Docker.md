@@ -1,21 +1,21 @@
 # Docker
 
-## 1. 安装Docker
+## 安装Docker
 
-### 获取最新版本的 Docker 安装包
-```sh
+### 1. 获取最新版本的 Docker 安装包
+```bash
 wget -qO- https://get.docker.com/ | sh  # 脚本安装
 docker -v # 查看版本号 是否成功安装
 ```
 
-### 非root用户运行docker,
-```sh
+### 2. 非root用户运行docker,
+```bash
 sudo usermod -aG docker runoob # 需要重新登入
 sudo service docker start #启动docker
 ```
 
-### 配置docker镜像
-```sh
+### 3. 配置docker镜像
+```bash
 vi /etc/docker/daemon.json
 ```
 
@@ -25,23 +25,23 @@ vi /etc/docker/daemon.json
 }   
 ```
 
-```sh
+```bash
 sudo service docker restart
 ```
 
-## 2. 卸载已安装的Docker版本
+## 卸载已安装的Docker版本
 
-### 卸载Docker
-```sh
+### 1. 卸载Docker
+```bash
 sudo apt-get purge docker-engine
 ```
 
-### 卸载Docker及其依赖的不再需要的包
-```sh
+### 2. 卸载Docker及其依赖的不再需要的包
+```bash
 sudo apt-get autoremove --purge docker-engine
 ```
 
-### 删除所有的镜像、容器和数据卷
-```sh
+### 3. 删除所有的镜像、容器和数据卷
+```bash
 rm -rf /var/lib/docker
  ```
