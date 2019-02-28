@@ -8,7 +8,7 @@ wget -qO- https://get.docker.com/ | sh  # 脚本安装
 docker -v # 查看版本号 是否成功安装
 ```
 
-### 2. 非root用户运行docker,
+### 2. 非root用户运行docker
 ```bash
 sudo usermod -aG docker runoob # 需要重新登入
 sudo service docker start #启动docker
@@ -26,6 +26,7 @@ vi /etc/docker/daemon.json
 ```
 
 ```bash
+sudo systemctl daemon-reload
 sudo service docker restart
 ```
 
