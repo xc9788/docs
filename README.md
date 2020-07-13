@@ -21,7 +21,13 @@
 - 通过nginx|apache提供web服务
 
 ### Dockerfile
-> TODO
+
+> 基于node基础包 + nginx做web服务代理
+
+```sh
+docker build -t docs .
+docker run -p 8080:8080 docs
+```
 
 
 ### thinking
