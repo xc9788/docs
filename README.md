@@ -5,8 +5,8 @@
 ### ToDo
 
 - [x] 基础介绍和使用方法
-- [] Dockerfile
-- [] thinking
+- [x] Dockerfile
+- [o] thinking
 
 ### 基础介绍和使用方法
 
