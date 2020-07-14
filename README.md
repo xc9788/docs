@@ -4,11 +4,11 @@
 
 ### ToDo
 
-[x] 基础介绍和使用方法
+- [x] 基础介绍和使用方法
 
-[x] Dockerfile
+- [x] Dockerfile
 
-[o] thinking
+- [ ] thinking
 
 ### 基础介绍和使用方法
 
