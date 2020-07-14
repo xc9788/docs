@@ -1,4 +1,5 @@
 {
+  "name": "docs",
   "devDependencies": {
     "vuepress": "^1.5.2"
   },
