@@ -202,6 +202,14 @@ require 'vendor/autoload.php';
 
 现在我们就可以使用 monolog 了！想要学习更多关于 Composer 的知识，请查看“基本用法”章节。
 
+#### 不考虑当前php环境扩展安装包
+
+在开发机器上往往扩展安装不与生产环境同步，这时候开发环境想要预览扩展的源码需要安装，composer默认是需要扩展支持才可以安装扩展，使用指定参数可以忽略扩展检查
+
+```bash
+composer install --ignore-platform-reqs
+```
+
 ## 常用日期，时间函数
 
 #### date()
