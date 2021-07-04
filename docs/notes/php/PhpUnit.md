@@ -36,10 +36,8 @@ PHPUnit 可选地允许在每个测试之前备份所有全局与超全局变量
 
 @backupStaticAttributes
 PHPUnit 可选地允许在每个测试之前备份所有已声明类的静态属性，并在每个测试结束后还原这些备份。
-
-... [jump](https://phpunit.readthedocs.io/zh_CN/latest/annotations.html#)
-
 ```
+... [jump](https://phpunit.readthedocs.io/zh_CN/latest/annotations.html#)
 
 ### 测试替身
 
